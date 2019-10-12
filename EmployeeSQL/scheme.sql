@@ -36,11 +36,21 @@ CREATE TABLE IF NOT EXISTS dept_mana (
 
 CREATE TABLE IF NOT EXISTS title (
     emp_no INTEGER NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employee(emp_no),
-	title VARCHAR (30),
+	title VARCHAR (30) NOT NULL,
 	from_date VARCHAR(10) NOT NULL,
-	to_date VARCHAR (10) NOT NULL,
-	--PRIMARY KEY (emp_no)
+	to_date VARCHAR (10) NOT NULL
 );
 
-SELECT * FROM title
+CREATE TABLE IF NOT EXISTS saleries (
+    emp_no INTEGER NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employee(emp_no),
+	salery VARCHAR (30) NOT NULL,
+	from_date VARCHAR(10) NOT NULL,
+	to_date VARCHAR (10) NOT NULL,
+	PRIMARY KEY (emp_no)
+);
+
+
+SELECT employee.emp_no, employee.last_name, employee.first_name, employee.gender, saleries.salary
+FROM employee
+RIGHT JOIN saleries ON employee.emp_no = saleries.emp_no
