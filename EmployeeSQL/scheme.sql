@@ -1,4 +1,4 @@
-
+/*
 CREATE TABLE IF NOT EXISTS employee (
     emp_no INTEGER NOT NULL PRIMARY KEY,
     birth_date VARCHAR(30) NOT NULL,
@@ -54,3 +54,4 @@ CREATE TABLE IF NOT EXISTS saleries (
 SELECT employee.emp_no, employee.last_name, employee.first_name, employee.gender, saleries.salary
 FROM employee
 RIGHT JOIN saleries ON employee.emp_no = saleries.emp_no
+*/

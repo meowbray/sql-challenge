@@ -38,9 +38,9 @@ SELECT last_name, COUNT(last_name)AS Frequency
 	GROUP BY last_name
 	ORDER BY
 	COUNT(last_name) DESC;
-*/
+
 
 select * from employee
 WHERE first_name='Hercules'
 
-
+*/
